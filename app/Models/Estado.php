@@ -21,4 +21,8 @@ class Estado extends Model
         'sigla',
         'nome'
     ];
+
+    public function cidades(){
+        return $this->hasMany(Cidade::class);
+    }
 }

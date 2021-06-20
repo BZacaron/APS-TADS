@@ -14,9 +14,10 @@ class CreateTableCidades extends Migration
     public function up()
     {
         Schema::create('tbcidades', function (Blueprint $table) {
-            $table->primary('codigo'); //Chave primaria
+            $table->unsignedBigInteger('codigo'); //Chave primaria
             $table->timestamps();
             $table->string('nome');
+            $table->string('estado'); //Chave estrangeira
             $table->foreign('estado')->references('sigla')->on('tbestados');
         });
     }
